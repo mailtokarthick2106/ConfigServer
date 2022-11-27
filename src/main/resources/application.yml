@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: ConfigServer
+  profiles:
+    active:
+      -   native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+            - /Users/karthickrajrajendran/Documents/workspace-spring-tool-suite-4-4.16.1.RELEASE/ConfigRepo
+        bootstrap: true
+  security:
+    user:
+      name: admin
+      password: admin
+server:
+  port: 8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /management
+  server:
+    port: 8191
